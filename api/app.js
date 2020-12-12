@@ -54,7 +54,9 @@ client.on('message', msg => {
   }
 });
 
-fs.readFile('~/bot_token.txt', 'utf8', function(err, data) {
+var fs = require('fs');
+
+fs.readFile('/home/ubuntu/bot_token.txt', 'utf8', function(err, data) {
     if (err) throw err;
 	
 	data = data.trim();
