@@ -54,7 +54,15 @@ client.on('message', msg => {
   }
 });
 
-client.login('Nzg3MzQwNzI1OTAxNzIxNjUw.X9TiMQ.7n3vlE0KfvQamZ9Rou1BiRANAB4');
+fs.readFile('~/bot_token.txt', 'utf8', function(err, data) {
+    if (err) throw err;
+	
+	data = data.trim();
+	
+    console.log("Token: >" + data + "<");
+	
+	client.login(data);
+});
 
 //Discord.JS ends
 
