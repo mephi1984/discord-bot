@@ -54,6 +54,12 @@ client.on('message', msg => {
   }
 });
 
+client.on("guildMemberAdd" ,(message, member) => {
+	console.log(member);
+	member.guild.channels.get('channelID').send("Welcome, " + member.user.username + "!");
+ 
+});
+
 var fs = require('fs');
 
 fs.readFile('/home/ubuntu/bot_token.txt', 'utf8', function(err, data) {
