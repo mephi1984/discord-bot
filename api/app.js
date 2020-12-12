@@ -38,4 +38,27 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+// Discord.JS
+
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+
+client.login('Nzg3MzQwNzI1OTAxNzIxNjUw.X9TiMQ.7n3vlE0KfvQamZ9Rou1BiRANAB4');
+
+//Discord.JS ends
+
+
+
+
 module.exports = app;
